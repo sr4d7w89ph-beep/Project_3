@@ -1,0 +1,200 @@
+/* ============================================================
+   HIGHVELD CHARTER CO. — SHARED STYLES
+   Design concept: the open-road route ticket. Deep veld green +
+   burnt clay, slab-serif signage type, dashed "perforation"
+   rules standing in for the usual hairline borders.
+   ============================================================ */
+
+:root {
+    --ink:          #13201a;
+    --ink-soft:     #1b2921;
+    --ink-line:     #2b3c31;
+    --clay:         #c1622c;
+    --clay-soft:    #e2915a;
+    --clay-glow:    rgba(193, 98, 44, 0.18);
+    --paper:        #f4ead6;
+    --paper-dim:    rgba(244, 234, 214, 0.64);
+    --paper-faint:  rgba(244, 234, 214, 0.05);
+    --font-display: 'Zilla Slab', serif;
+    --font-body:    'Work Sans', sans-serif;
+    --max-width:    1220px;
+    --ease:         0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: var(--font-body);
+    background: var(--ink);
+    color: var(--paper);
+    overflow-x: hidden;
+    font-weight: 300;
+    line-height: 1.7;
+}
+
+ul { list-style: none; }
+a { text-decoration: none; color: inherit; }
+img { width: 100%; display: block; }
+
+/* LAYOUT */
+.wrap {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+/* small route-marker label, sentence case — not all-caps */
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: var(--clay-soft);
+    margin-bottom: 14px;
+}
+.tag::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--clay);
+}
+.page-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(2rem, 4.2vw, 3rem);
+    line-height: 1.12;
+    color: var(--paper);
+}
+
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s var(--ease), transform 0.6s var(--ease); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* dashed "perforation" divider used instead of a hairline rule */
+.perf {
+    border: none;
+    border-top: 1px dashed var(--ink-line);
+    margin: 0;
+}
+
+/* ---- HEADER ---- */
+#header {
+    position: fixed; inset: 0 0 auto 0; z-index: 1000;
+    transition: background var(--ease), border-color var(--ease), padding var(--ease);
+    border-bottom: 1px solid transparent;
+}
+#header.scrolled {
+    background: rgba(19, 32, 26, 0.94);
+    backdrop-filter: blur(14px);
+    border-bottom-color: var(--ink-line);
+}
+.navbar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 26px 32px;
+    transition: padding var(--ease);
+}
+#header.scrolled .navbar { padding: 16px 32px; }
+
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand-mark {
+    width: 34px; height: 34px;
+    border: 1px solid var(--clay);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--clay-soft);
+    font-size: 0.95rem;
+}
+.brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+.brand-name { font-family: var(--font-display); font-weight: 600; font-size: 1.28rem; color: var(--paper); }
+.brand-sub { font-size: 0.68rem; letter-spacing: 1.5px; color: var(--clay-soft); }
+
+.nav-menu { display: flex; gap: 4px; }
+.nav-link {
+    padding: 8px 16px;
+    font-size: 0.92rem; color: var(--paper-dim);
+    position: relative; transition: color 0.3s;
+}
+.nav-link::after {
+    content: ''; position: absolute; bottom: 2px; left: 16px; right: 16px;
+    height: 1px; background: var(--clay); transform: scaleX(0); transform-origin: left; transition: transform 0.3s;
+}
+.nav-link:hover, .nav-link.active { color: var(--paper); }
+.nav-link:hover::after, .nav-link.active::after { transform: scaleX(1); }
+
+.nav-cta {
+    padding: 10px 22px;
+    border: 1px solid var(--clay);
+    color: var(--clay-soft);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    transition: var(--ease);
+}
+.nav-cta:hover { background: var(--clay); color: var(--ink); }
+
+.mobile-toggle {
+    display: none; flex-direction: column; gap: 5px;
+    background: none; border: none; cursor: pointer; padding: 4px;
+}
+.mobile-toggle span { display: block; width: 22px; height: 1px; background: var(--paper); transition: var(--ease); }
+.mobile-toggle.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.mobile-toggle.open span:nth-child(2) { opacity: 0; }
+.mobile-toggle.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+.mobile-nav {
+    position: fixed; inset: 0; z-index: 999;
+    background: var(--ink);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none; transition: opacity 0.4s;
+}
+.mobile-nav.open { opacity: 1; pointer-events: all; }
+.mobile-nav ul { display: flex; flex-direction: column; gap: 26px; text-align: center; }
+.mobile-nav a { font-family: var(--font-display); font-size: 2.2rem; color: var(--paper-dim); transition: color 0.3s; }
+.mobile-nav a:hover, .mobile-nav .accent-link { color: var(--clay-soft); }
+
+/* ---- BUTTONS (pill, no slide-fill trope) ---- */
+.btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 30px;
+    font-size: 0.9rem; font-weight: 500;
+    border-radius: 999px;
+    transition: var(--ease);
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.btn-fill {
+    background: var(--clay); color: var(--ink);
+}
+.btn-fill:hover { background: var(--clay-soft); transform: translateY(-2px); }
+.btn-line {
+    border-color: var(--ink-line); color: var(--paper-dim);
+}
+.btn-line:hover { border-color: var(--clay); color: var(--paper); }
+
+/* ---- FOOTER ---- */
+.footer {
+    background: var(--ink);
+    border-top: 1px dashed var(--ink-line);
+    padding: 36px 0;
+}
+.footer-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 24px; flex-wrap: wrap;
+}
+.footer-brand { display: flex; flex-direction: column; }
+.footer-name { font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; color: var(--clay-soft); }
+.footer-sub { font-size: 0.68rem; letter-spacing: 1.5px; color: var(--paper-dim); }
+.footer-links { display: flex; gap: 26px; }
+.footer-links a { font-size: 0.85rem; color: var(--paper-dim); transition: color 0.3s; }
+.footer-links a:hover { color: var(--clay-soft); }
+.footer-copy { font-size: 0.78rem; color: var(--paper-dim); }
+
+@media (max-width: 900px) {
+    .nav-menu, .nav-cta { display: none; }
+    .mobile-toggle { display: flex; }
+    .navbar { padding: 18px 20px; }
+    .footer-inner { flex-direction: column; text-align: center; }
+    .footer-links { justify-content: center; }
+}
+@media (max-width: 640px) {
+    .wrap { padding: 0 20px; }
+}

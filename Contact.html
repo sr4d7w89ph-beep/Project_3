@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Sameline Shuttle Service.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Work+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="shared.css" />
+    <link rel="stylesheet" href="contact.css" />
+    <!-- EmailJS: replace publicKey with the client's own EmailJS key -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+      (function () {
+        emailjs.init({ publicKey: "REPLACE_WITH_EMAILJS_PUBLIC_KEY" });
+      })();
+    </script>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header id="header">
+      <nav class="navbar wrap">
+        <a href="index.html" class="brand">
+          <span class="brand-mark"><i class="fa-solid fa-route"></i></span>
+          <span class="brand-text">
+            <span class="brand-name">Sameline </span>
+            <span class="brand-sub">Shuttle Service.</span>
+          </span>
+        </a>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="About.html" class="nav-link">About</a></li>
+          <li><a href="Contact.html" class="nav-link active">Contact</a></li>
+        </ul>
+        <a href="#contact-form" class="nav-cta">Get in touch</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+      <div class="mobile-nav" id="mobileNav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+          <li>
+            <a href="HireVehicle.html" class="accent-link">Book a charter</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="wrap">
+          <p class="tag">Get in touch</p>
+          <h1 class="page-title">Let's plan your route</h1>
+          <p>Send a message and the team responds within two hours.</p>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contact-form">
+        <div class="wrap contact-grid">
+          <div>
+            <p class="tag">Contact details</p>
+            <h2 class="page-title">We're here to help</h2>
+            <p class="contact-intro">
+              Reliable, insured travel and transportation across South Africa —
+              airport shuttles and vehicle charters, built around your request.
+              Send a message and we'll get back to you fast.
+            </p>
+
+            <div class="contact-details">
+              <a
+                href="mailto:bookings@highveldcharter.co.za"
+                class="contact-detail-item"
+              >
+                <div class="detail-icon">
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div>
+                  <span class="detail-label">Email</span>
+                  <span class="detail-value"
+                    >bookings@SamelineShuttleService.co.za</span
+                  >
+                </div>
+              </a>
+              <a href="tel:+27000000000" class="contact-detail-item">
+                <div class="detail-icon"><i class="fa-solid fa-phone"></i></div>
+                <div>
+                  <span class="detail-label">Phone</span>
+                  <span class="detail-value">+27 00 000 0000</span>
+                </div>
+              </a>
+              <div class="contact-detail-item">
+                <div class="detail-icon">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div>
+                  <span class="detail-label">Location</span>
+                  <span class="detail-value">Johannesburg, South Africa</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="response-badge">
+              <i class="fa-solid fa-bolt"></i>
+              Average response time: <strong>under 2 hours</strong>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label>Your name</label>
+              <input type="text" name="name" placeholder="John Doe" required />
+            </div>
+            <div class="form-group">
+              <label>Email address</label>
+              <input
+                type="email"
+                name="email"
+                placeholder="john@email.com"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label>Your message</label>
+              <textarea
+                rows="6"
+                name="message"
+                placeholder="How can we help you?"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="submit-btn">
+              Send message <i class="fa-solid fa-paper-plane"></i>
+            </button>
+            <p class="form-note">
+              <i class="fa-solid fa-lock"></i> Your details are kept private and
+              secure.
+            </p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="wrap footer-inner">
+        <div class="footer-brand">
+          <span class="footer-name">Sameline Shuttle Service.</span>
+          <span class="footer-sub">Vehicle charter, South Africa</span>
+        </div>
+        <nav class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="About.html">About</a>
+          <a href="Contact.html">Contact</a>
+          <a href="HireVehicle.html">Fleet</a>
+        </nav>
+        <p class="footer-copy">
+          © 2025 Sameline Shuttle Service. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script src="contact.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const header = document.getElementById("header");
+        window.addEventListener("scroll", () =>
+          header.classList.toggle("scrolled", window.scrollY > 60),
+        );
+
+        const btn = document.getElementById("mobileToggle");
+        const nav = document.getElementById("mobileNav");
+        btn.addEventListener("click", () => {
+          btn.classList.toggle("open");
+          nav.classList.toggle("open");
+        });
+        nav.querySelectorAll("a").forEach((a) =>
+          a.addEventListener("click", () => {
+            btn.classList.remove("open");
+            nav.classList.remove("open");
+          }),
+        );
+
+        // Fallback if contact.js hasn't taken over the submit handler
+        const form = document.getElementById("contactForm");
+        if (form && !form.dataset.handledByJs) {
+          form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const submitBtn = this.querySelector(".submit-btn");
+            submitBtn.innerHTML =
+              'Message sent <i class="fa-solid fa-check"></i>';
+            submitBtn.style.background = "#3f7a4e";
+            setTimeout(() => {
+              submitBtn.innerHTML =
+                'Send message <i class="fa-solid fa-paper-plane"></i>';
+              submitBtn.style.background = "";
+              this.reset();
+            }, 3000);
+          });
+        }
+
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) e.target.classList.add("visible");
+            });
+          },
+          { threshold: 0.1 },
+        );
+        document
+          .querySelectorAll(".contact-detail-item, .contact-form")
+          .forEach((el) => {
+            el.classList.add("reveal");
+            io.observe(el);
+          });
+      });
+    </script>
+  </body>
+</html>

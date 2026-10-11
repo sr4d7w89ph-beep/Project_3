@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Charter a Vehicle | Sameline Shuttle Service.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Work+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="shared.css" />
+    <link rel="stylesheet" href="hire.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header id="header">
+      <nav class="navbar wrap">
+        <a href="index.html" class="brand">
+          <span class="brand-mark"><i class="fa-solid fa-route"></i></span>
+          <span class="brand-text">
+            <span class="brand-name">Sameline </span>
+            <span class="brand-sub">Shuttle Service.</span>
+          </span>
+        </a>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="About.html" class="nav-link">About</a></li>
+          <li><a href="Contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <a href="#hire-form" class="nav-cta">Book now</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+      <div class="mobile-nav" id="mobileNav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+          <li><a href="#hire-form" class="accent-link">Book now</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="wrap">
+          <p class="tag">Available fleet</p>
+          <h1 class="page-title">Choose your vehicle</h1>
+          <p>
+            Airport shuttle or a charter built around your request — select a
+            vehicle below and we'll pre-fill your booking automatically.
+          </p>
+        </div>
+      </section>
+
+      <!-- FLEET -->
+      <section class="fleet-section" id="fleet">
+        <div class="wrap">
+          <div class="car-grid">
+            <div class="car-card">
+              <div class="car-badge">Available</div>
+              <div class="car-images">
+                <img
+                  src="pictures/Car5.jpeg"
+                  alt="Hyundai Staria, front view"
+                />
+                <img src="pictures/Car4.jpeg" alt="Hyundai Staria, interior" />
+                <img src="pictures/Car3.jpeg" alt="Hyundai Staria, rear view" />
+              </div>
+              <div class="car-body">
+                <div class="car-top">
+                  <div>
+                    <span class="car-type">Van · Automatic</span>
+                    <h3 class="car-name">Hyundai Staria</h3>
+                  </div>
+                  <div class="car-price">
+                    <span class="price-num">R2,000</span>
+                    <span class="price-unit">per day</span>
+                  </div>
+                </div>
+                <div class="car-specs">
+                  <span><i class="fa-solid fa-users"></i> 7 seats</span>
+                  <span><i class="fa-solid fa-gear"></i> Automatic</span>
+                  <span><i class="fa-solid fa-gas-pump"></i> Petrol</span>
+                </div>
+                <a
+                  href="#hire-form"
+                  class="btn btn-fill"
+                  data-car="Hyundai Staria"
+                >
+                  Select this vehicle <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="car-card">
+              <div class="car-badge">Available</div>
+              <div class="car-images">
+                <img src="pictures/Car7.jpeg" alt="Suzuki Ertiga, front view" />
+                <img src="pictures/Car9.jpeg" alt="Suzuki Ertiga, rear view" />
+                <img src="pictures/Car10.jpeg" alt="Suzuki Ertiga, side view" />
+              </div>
+              <div class="car-body">
+                <div class="car-top">
+                  <div>
+                    <span class="car-type">MPV · Automatic</span>
+                    <h3 class="car-name">Suzuki Ertiga</h3>
+                  </div>
+                  <div class="car-price">
+                    <span class="price-num">R2,000</span>
+                    <span class="price-unit">per day</span>
+                  </div>
+                </div>
+                <div class="car-specs">
+                  <span><i class="fa-solid fa-users"></i> 7 seats</span>
+                  <span><i class="fa-solid fa-gear"></i> Automatic</span>
+                  <span><i class="fa-solid fa-gas-pump"></i> Petrol</span>
+                </div>
+                <a
+                  href="#hire-form"
+                  class="btn btn-fill"
+                  data-car="Suzuki Ertiga"
+                >
+                  Select this vehicle <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HIRE FORM -->
+      <section class="form-section" id="hire-form">
+        <div class="wrap form-grid">
+          <div class="form-info">
+            <p class="tag">Booking request</p>
+            <h2 class="page-title">Charter a vehicle</h2>
+            <p>
+              Fill in your details and we'll confirm your booking as soon as
+              possible. All bookings are subject to availability.
+            </p>
+
+            <div class="info-cards">
+              <div class="info-card">
+                <i class="fa-solid fa-clock"></i>
+                <div>
+                  <strong>Quick response</strong
+                  ><span>We confirm within 2 hours</span>
+                </div>
+              </div>
+              <div class="info-card">
+                <i class="fa-solid fa-shield-halved"></i>
+                <div>
+                  <strong>Fully insured</strong
+                  ><span>Every vehicle is comprehensively covered</span>
+                </div>
+              </div>
+              <div class="info-card">
+                <i class="fa-solid fa-headset"></i>
+                <div>
+                  <strong>24/7 support</strong
+                  ><span>We're available around the clock</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <form class="hire-form" id="hireForm">
+            <div
+              class="form-selected-car"
+              id="selectedCarDisplay"
+              style="display: none"
+            >
+              <i class="fa-solid fa-car"></i>
+              <span id="selectedCarName">No vehicle selected</span>
+              <button type="button" class="clear-car" id="clearCar">✕</button>
+            </div>
+
+            <div class="form-group">
+              <label>Full name</label>
+              <input type="text" name="name" placeholder="John Doe" required />
+            </div>
+            <div class="form-group">
+              <label>Email address</label>
+              <input
+                type="email"
+                name="email"
+                placeholder="john@email.com"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label>Phone number</label>
+              <input
+                type="tel"
+                name="phone"
+                placeholder="+27 00 000 0000"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label>Trip type</label>
+              <select name="tripType" id="tripType" required>
+                <option value="">Select one</option>
+                <option value="Airport shuttle">Airport shuttle</option>
+                <option value="Custom charter">
+                  Custom charter (per my request)
+                </option>
+              </select>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Pickup date</label>
+                <input type="date" name="pickup" required />
+              </div>
+              <div class="form-group">
+                <label>Return date</label>
+                <input type="date" name="return" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Additional details</label>
+              <textarea
+                id="hire-text"
+                name="details"
+                rows="4"
+                placeholder="Any specific requirements or questions..."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">
+              Submit booking request
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+            <p class="form-note">
+              <i class="fa-solid fa-lock"></i> Your details are kept private and
+              secure.
+            </p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="wrap footer-inner">
+        <div class="footer-brand">
+          <span class="footer-name">Sameline Shuttle Service.</span>
+          <span class="footer-sub">Vehicle charter, South Africa</span>
+        </div>
+        <nav class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="About.html">About</a>
+          <a href="Contact.html">Contact</a>
+        </nav>
+        <p class="footer-copy">
+          © 2025 Sameline Shuttle Service. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Slideshow
+        document.querySelectorAll(".car-card").forEach((card) => {
+          const slides = card.querySelectorAll(".car-images img");
+          if (!slides.length) return;
+          slides[0].style.opacity = "1";
+          let idx = 0;
+          setInterval(() => {
+            slides[idx].style.opacity = "0";
+            idx = (idx + 1) % slides.length;
+            slides[idx].style.opacity = "1";
+          }, 3000);
+        });
+
+        // Header scroll
+        const header = document.getElementById("header");
+        window.addEventListener("scroll", () =>
+          header.classList.toggle("scrolled", window.scrollY > 60),
+        );
+
+        // Mobile nav
+        const btn = document.getElementById("mobileToggle");
+        const nav = document.getElementById("mobileNav");
+        btn.addEventListener("click", () => {
+          btn.classList.toggle("open");
+          nav.classList.toggle("open");
+        });
+        nav.querySelectorAll("a").forEach((a) =>
+          a.addEventListener("click", () => {
+            btn.classList.remove("open");
+            nav.classList.remove("open");
+          }),
+        );
+
+        // Pre-fill from URL param
+        const params = new URLSearchParams(window.location.search);
+        const carFromUrl = params.get("car");
+        const display = document.getElementById("selectedCarDisplay");
+        const carNameEl = document.getElementById("selectedCarName");
+        const textarea = document.getElementById("hire-text");
+
+        function selectCar(name) {
+          carNameEl.textContent = name;
+          display.style.display = "flex";
+          textarea.value = `I would like to charter the ${name}.`;
+        }
+
+        if (carFromUrl) selectCar(carFromUrl);
+
+        // Select buttons on cards
+        document.querySelectorAll(".car-card [data-car]").forEach((btn) => {
+          btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            selectCar(btn.dataset.car);
+            document
+              .getElementById("hire-form")
+              .scrollIntoView({ behavior: "smooth", block: "start" });
+          });
+        });
+
+        // Clear car
+        document.getElementById("clearCar").addEventListener("click", () => {
+          display.style.display = "none";
+          textarea.value = "";
+        });
+
+        // Form submission
+        document
+          .getElementById("hireForm")
+          .addEventListener("submit", function (e) {
+            e.preventDefault();
+            const submitBtn = this.querySelector(".submit-btn");
+            submitBtn.textContent = "Request sent";
+            submitBtn.style.background = "#3f7a4e";
+            setTimeout(() => {
+              submitBtn.innerHTML =
+                'Submit booking request <i class="fa-solid fa-arrow-right"></i>';
+              submitBtn.style.background = "";
+              this.reset();
+              display.style.display = "none";
+            }, 3000);
+          });
+
+        // Scroll reveal
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) e.target.classList.add("visible");
+            });
+          },
+          { threshold: 0.1 },
+        );
+        document
+          .querySelectorAll(".car-card, .form-info, .hire-form, .info-card")
+          .forEach((el) => {
+            el.classList.add("reveal");
+            io.observe(el);
+          });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,397 @@
+/* ============================================================
+   HOME — page-specific only (shared.css holds tokens/header/footer)
+   ============================================================ */
+
+/* ---- HERO ---- */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 100px;
+  position: relative;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 60px;
+  align-items: center;
+}
+.hero-copy h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.6rem, 5.4vw, 4.4rem);
+  line-height: 1.06;
+  color: var(--paper);
+  margin-bottom: 22px;
+}
+.hero-copy p {
+  color: var(--paper-dim);
+  font-size: 1.02rem;
+  max-width: 460px;
+  margin-bottom: 36px;
+}
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+/* route-ticket stat strip, dashed instead of boxed cards */
+.ticket-strip {
+  display: flex;
+  border: 1px dashed var(--ink-line);
+  border-radius: 14px;
+  overflow: hidden;
+  max-width: 460px;
+}
+.ticket-stat {
+  flex: 1;
+  padding: 18px 20px;
+  position: relative;
+}
+.ticket-stat + .ticket-stat::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 12px;
+  bottom: 12px;
+  border-left: 1px dashed var(--ink-line);
+}
+.ticket-stat strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--clay-soft);
+}
+.ticket-stat span {
+  font-size: 0.78rem;
+  color: var(--paper-dim);
+}
+
+.hero-photo {
+  position: relative;
+}
+.hero-photo-frame {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+}
+.hero-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-photo-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    200deg,
+    transparent 55%,
+    rgba(19, 32, 26, 0.75) 100%
+  );
+}
+/* route-line accent instead of a floating badge card */
+.route-line {
+  position: absolute;
+  left: -26px;
+  top: 12%;
+  width: 60px;
+  height: 76%;
+  pointer-events: none;
+}
+
+/* ---- SERVICES ---- */
+.services {
+  padding: 90px 0 0;
+}
+.service-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.service-card {
+  background: var(--ink-soft);
+  border: 1px solid var(--ink-line);
+  border-radius: 16px;
+  padding: 32px 30px;
+}
+.service-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--clay-glow);
+  border: 1px solid var(--clay);
+  color: var(--clay-soft);
+  font-size: 1.1rem;
+  margin-bottom: 18px;
+}
+.service-card h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--paper);
+  margin-bottom: 10px;
+}
+.service-card p {
+  font-size: 0.92rem;
+  color: var(--paper-dim);
+  line-height: 1.7;
+}
+
+/* ---- WHY US ---- */
+.why {
+  padding: 90px 0 60px;
+}
+.section-head {
+  margin-bottom: 52px;
+  max-width: 560px;
+}
+.why-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.why-item {
+  padding: 30px 26px 30px 0;
+  border-top: 1px dashed var(--ink-line);
+}
+.why-item:not(:last-child) {
+  border-right: 1px dashed var(--ink-line);
+  padding-right: 26px;
+}
+.why-item .num {
+  font-family: var(--font-display);
+  color: var(--clay);
+  font-size: 0.95rem;
+  margin-bottom: 14px;
+  display: block;
+}
+.why-item h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--paper);
+  margin-bottom: 10px;
+}
+.why-item p {
+  font-size: 0.88rem;
+  color: var(--paper-dim);
+}
+
+/* ---- ABOUT STRIP ---- */
+.about-strip {
+  margin: 60px 0 0;
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 64px;
+  align-items: center;
+  padding: 54px 0;
+  border-top: 1px dashed var(--ink-line);
+}
+.about-strip h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.9rem;
+  color: var(--paper);
+  margin-bottom: 16px;
+}
+.about-strip p {
+  color: var(--paper-dim);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 22px;
+}
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--clay-soft);
+}
+.text-link span {
+  border-bottom: 1px solid var(--clay);
+  padding-bottom: 2px;
+}
+.about-strip-img img {
+  border-radius: 14px;
+  filter: drop-shadow(0 14px 30px rgba(0, 0, 0, 0.35));
+}
+
+/* ---- FLEET ---- */
+.fleet {
+  padding: 100px 0;
+}
+.car-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+.car-card {
+  background: var(--ink-soft);
+  border: 1px solid var(--ink-line);
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  transition: var(--ease);
+}
+.car-card:hover {
+  border-color: var(--clay);
+  transform: translateY(-4px);
+}
+.car-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 3;
+  background: var(--ink);
+  border: 1px solid var(--clay);
+  color: var(--clay-soft);
+  font-size: 0.72rem;
+  padding: 5px 14px;
+  border-radius: 999px;
+}
+.car-images {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  background: var(--ink);
+}
+.car-images img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+.car-body {
+  padding: 26px 26px 30px;
+}
+.car-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 18px;
+  gap: 12px;
+}
+.car-type {
+  font-size: 0.8rem;
+  color: var(--clay-soft);
+  display: block;
+  margin-bottom: 4px;
+}
+.car-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: var(--paper);
+  line-height: 1.1;
+}
+.car-price {
+  text-align: right;
+}
+.price-num {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.7rem;
+  color: var(--clay-soft);
+  display: block;
+  line-height: 1;
+}
+.price-unit {
+  font-size: 0.78rem;
+  color: var(--paper-dim);
+}
+.car-specs {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--ink-line);
+}
+.car-specs span {
+  font-size: 0.82rem;
+  color: var(--paper-dim);
+}
+
+/* ---- CTA ---- */
+.cta {
+  padding: 76px 0;
+  border-top: 1px dashed var(--ink-line);
+}
+.cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.cta-inner h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  color: var(--paper);
+  margin-bottom: 6px;
+}
+.cta-inner p {
+  color: var(--paper-dim);
+  font-size: 0.95rem;
+}
+.cta-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1024px) {
+  .why-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .why-item:nth-child(2n) {
+    border-right: none;
+    padding-right: 0;
+  }
+  .about-strip {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+@media (max-width: 700px) {
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-photo {
+    order: -1;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+  .car-grid {
+    grid-template-columns: 1fr;
+  }
+  .cta-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+@media (max-width: 640px) {
+  .why-list {
+    grid-template-columns: 1fr;
+  }
+  .why-item {
+    border-right: none !important;
+    padding-right: 0 !important;
+  }
+}
